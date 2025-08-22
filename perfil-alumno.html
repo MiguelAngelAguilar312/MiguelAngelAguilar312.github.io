@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMAP - Dashboard Alumno</title>
+  <link rel="icon" type="image/png" href="src/img/logo_SMAP_MX.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="src/assets/css/Machote-ALUMNO.css">
+</head>
+<body class="bg-light">
+
+  <!-- Sidebar de escritorio -->
+  <div class="d-flex flex-column flex-shrink-0 sidebar">
+    <a href="dashboard-alumno.html" class="d-block p-3 text-decoration-none text-center">
+      <img src="src/img/logo_SMAP_MX.jpg" alt="Logo SMAP" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
+    </a>
+    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center mt-2">
+      <li><a href="modulos-alumno.html" class="nav-link active py-3 border-bottom rounded-0"><i class="bi bi-list fs-4"></i></a></li>
+      <li><a href="mi-progreso.html" class="nav-link py-3 border-bottom rounded-0"><i class="bi bi-speedometer2 fs-4"></i></a></li>
+      <li><a href="calendario-alumno.html" class="nav-link py-3 border-bottom rounded-0"><i class="bi bi-table fs-4"></i></a></li>
+      <li><a href="evaluaciones-alumno.html" class="nav-link py-3 border-bottom rounded-0"><i class="bi bi-grid fs-4"></i></a></li>
+    </ul>
+    <div class="dropdown border-top mt-auto">
+      <a href="#" class="d-flex align-items-center justify-content-center p-3 text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+        <img src="src/img/foto_perfil.jpg" alt="Usuario" width="24" height="24" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="perfil-alumno.html">Perfil</a></li>
+        <li><a class="dropdown-item" href="ajuste-alumno.html">Ajustes</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="index.html">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="text-center py-3 bg-light shadow-sm">
+    <div class="container">
+      <h1 class="fw-bold">Perfil de Usuario</h1>
+    </div>
+  </header>
+
+  <!-- Navbar móvil -->
+  <nav class="navbar navbar-dark bg-dark fixed-top d-lg-none" style="top: 56px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="dashboard-alumno.html">
+        <img src="src/img/logo_SMAP_MX.jpg" alt="Logo SMAP" class="rounded-circle" style="width: 35px; height: 35px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-end text-bg-dark d-lg-none" tabindex="-1" id="offcanvasNavbarDark">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menú</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li><a class="nav-link active" href="dashboard-alumno.html">Inicio</a></li>
+        <li><a class="nav-link active" href="modulos-alumno.html">Módulos</a></li>
+        <li><a class="nav-link active" href="mi-progreso.html">Progreso</a></li>
+        <li><a class="nav-link active" href="calendario-alumno.html">Calendario</a></li>
+        <li><a class="nav-link active" href="evaluaciones-alumno.html">Evaluaciones</a></li>
+        <li><a class="nav-link active" href="perfil-alumno.html">Perfil</a></li>
+        <li><a class="nav-link active" href="ajuste-alumno.html">Ajustes</a></li>
+      </ul>
+      <hr>
+      <a href="index.html" class="btn btn-outline-light w-100">Cerrar Sesión</a>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <main class="container my-4">
+    <div class="row justify-content-center">
+      <!-- Foto de perfil -->
+      <div class="col-12 col-md-4 text-center mb-3">
+        <div class="card shadow-sm p-3 d-flex align-items-center">
+          <img src="src/img/foto_perfil.jpg" alt="Foto de Perfil" class="img-fluid rounded-circle mb-3" id="previewFoto" style="width: 150px; height: 150px; object-fit: cover;">
+          <input type="file" class="form-control mb-2" id="inputFoto" accept="image/*">
+          <button class="btn btn-primary btn-sm w-100 mb-1" id="btnCambiarFoto">Cambiar Foto</button>
+          <button class="btn btn-danger btn-sm w-100" id="btnEliminarFoto">Eliminar Foto</button>
+        </div>
+      </div>
+
+      <!-- Formulario de perfil y contraseña -->
+      <div class="col-12 col-md-8">
+        <div class="card shadow-sm p-4 mb-4">
+          <form id="formPerfil">
+            <h5 class="mb-3">Información del Perfil</h5>
+            <div class="mb-3"><label class="form-label">Nombre Completo</label><input type="text" class="form-control" id="nombre" placeholder="Ejemplo: Juan Pérez"></div>
+            <div class="mb-3"><label class="form-label">Correo Electrónico</label><input type="email" class="form-control" id="correo" placeholder="ejemplo@correo.com"></div>
+            <div class="mb-3"><label class="form-label">Teléfono</label><input type="tel" class="form-control" id="telefono" placeholder="+52 55 1234 5678"></div>
+            <div class="mb-3"><label class="form-label">Dirección</label><textarea class="form-control" id="direccion" rows="2"></textarea></div>
+            <div class="mb-3"><label class="form-label">Fecha de Nacimiento</label><input type="date" class="form-control" id="fechaNacimiento"></div>
+            <button type="submit" class="btn btn-success w-100">Guardar Perfil</button>
+          </form>
+        </div>
+
+        <div class="card shadow-sm p-4">
+          <form id="formPassword">
+            <h5 class="mb-3">Cambiar Contraseña</h5>
+            <div class="mb-3"><label class="form-label">Contraseña Actual</label><input type="password" class="form-control" id="passwordActual"></div>
+            <div class="mb-3"><label class="form-label">Nueva Contraseña</label><input type="password" class="form-control" id="passwordNueva"></div>
+            <div class="mb-3"><label class="form-label">Confirmar Nueva Contraseña</label><input type="password" class="form-control" id="passwordConfirmar"></div>
+            <button type="submit" class="btn btn-warning w-100">Cambiar Contraseña</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vista previa pública -->
+    <div class="card shadow-sm mt-4 p-4 vista-publica">
+      <h5 class="mb-3">Vista Previa (Lo que ven otros usuarios)</h5>
+      <img src="src/img/foto_perfil.jpg" alt="Foto de Perfil" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover;" id="vistaPublicaFoto">
+      <h6 id="vistaPublicaNombre">Juan Pérez</h6>
+      <p class="mb-0"><i class="bi bi-envelope"></i> <span id="vistaPublicaCorreo">ejemplo@correo.com</span></p>
+      <p class="mb-0"><i class="bi bi-telephone"></i> <span id="vistaPublicaTelefono">+52 55 1234 5678</span></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-2">
+    <small>Diplomado de Anestesia Pediátrica 2025 © Sociedad Mexicana de Anestesia Pediátrica</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/assets/js/perfil_admin.js"></script>
+</body>
+</html>

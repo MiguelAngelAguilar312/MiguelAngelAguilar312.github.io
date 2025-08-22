@@ -1,0 +1,170 @@
+/* ===========================
+   Ajustes generales del body
+=========================== */
+body {
+  background-color: #f8f9fa;
+  padding-top: 120px;       /* espacio para header + navbar móvil */
+  padding-left: 70px;       /* espacio para barra lateral (desktop) */
+  padding-right: 0;
+  padding-bottom: 60px;     /* espacio para footer fijo */
+}
+
+/* ===========================
+   Header fijo
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 70px; /* espacio para sidebar */
+  right: 0;
+  height: 70px;
+  z-index: 1020;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tamaño título */
+.responsive-title {
+  font-size: 1.5rem; /* escritorio */
+}
+
+/* Header en móviles */
+@media (max-width: 992px) {
+  .responsive-title {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   Footer fijo
+=========================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  background-color: #212529;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  z-index: 1040;
+}
+
+/* ===========================
+   Ajustes para móviles
+=========================== */
+@media (max-width: 992px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  header {
+    left: 0;
+  }
+
+  body {
+    padding-left: 0;
+    padding-top: 120px;
+  }
+
+  .navbar-mobile {
+    display: block;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    z-index: 1010;
+  }
+
+  main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .col-md-4, .col-md-8 {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+
+  #previewFoto {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .vista-publica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vista-publica img {
+    margin-bottom: 0.5rem;
+  }
+
+  .btn.w-100 {
+    width: 100% !important;
+  }
+}
+
+/* ===========================
+   Calendario FullCalendar - Compacto móvil
+=========================== */
+@media (max-width: 500px) {
+  .fc-header-toolbar.fc-toolbar-ltr {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3px;
+      flex-wrap: nowrap;
+      padding: 2px;
+  }
+
+  .fc-header-toolbar.fc-toolbar-ltr .fc-toolbar-chunk {
+      display: flex;
+      flex: 0 1 auto;
+      justify-content: center;
+      gap: 2px;
+  }
+
+  .fc-button {
+      padding: 0.15rem 0.3rem;
+      font-size: 0.65rem;  /* legible en móviles */
+      min-width: 1.5rem;
+  }
+
+  .fc-toolbar-title {
+      font-size: 0.5px;
+      margin: 0 2px;
+      white-space: nowrap;
+      text-align: center;
+  }
+
+  .fc-view-harness {
+      overflow-x: auto;
+  }
+
+  .fc-prev-button, .fc-next-button, .fc-today-button {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.3rem;
+  }
+}

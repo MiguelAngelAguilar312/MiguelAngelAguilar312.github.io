@@ -1,0 +1,174 @@
+/* ===========================
+   Ajustes generales del body
+=========================== */
+body {
+  background-color: #f8f9fa;
+  padding-top: 120px;       /* espacio para header + navbar móvil */
+  padding-left: 70px;       /* espacio para barra lateral (desktop) */
+  padding-bottom: 60px;     /* espacio para footer fijo */
+}
+
+/* ===========================
+   Header fijo
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 70px; /* corre el header para dejar espacio a la sidebar */
+  right: 0;
+  height: 70px;
+  z-index: 1020;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tamaño título por defecto en escritorio */
+.responsive-title {
+  font-size: 1.5rem; /* ≈ H4 */
+}
+
+/* Tamaño título en móviles */
+@media (max-width: 992px) {
+  .responsive-title {
+    font-size: 1rem; /* ≈ H6 */
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    left: 0; /* header ocupa todo el ancho en móviles */
+  }
+}
+
+/* ===========================
+   Footer fijo
+=========================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* ===========================
+   Barra lateral (sidebar)
+=========================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  background-color: #212529;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  z-index: 1040;
+}
+
+.sidebar a,
+.sidebar .nav-link {
+  color: #f2f4f7;
+  text-align: center;
+}
+
+.sidebar a:hover,
+.sidebar .nav-link:hover {
+  background-color: #e9ecef;
+}
+
+/*AGREGADO PARA CORREGIR EL SLIDE BAR EL FONDO BALNCO A OSCURO*/
+.dropdown-menu-dark {
+  background-color: #212529 !important;
+  color: #f8f9fa !important;
+}
+
+.dropdown-menu-dark .dropdown-item {
+  color: #f8f9fa;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    display: none !important; /* oculta sidebar en móviles */
+  }
+}
+
+/* ===========================
+   Navbar móvil
+=========================== */
+.navbar-mobile {
+  display: none;
+  position: fixed;
+  top: 70px; /* justo debajo del header */
+  width: 100%;
+  z-index: 1010;
+}
+
+@media (max-width: 992px) {
+  .navbar-mobile {
+    display: block; /* visible solo en móviles */
+  }
+}
+
+/* ===========================
+   Carrusel
+=========================== */
+.carousel-item img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  background: rgba(0,0,0,0.4);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-item img {
+    height: 200px;
+  }
+}
+
+/* ===========================
+   Cards y contenido
+=========================== */
+.content {
+  margin-left: 70px;
+  padding: 20px;
+}
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 120px; /* header + navbar móvil */
+    padding-left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+.card {
+  border-radius: 0.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,42 @@
+/* Fondo suave */
+body {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  background-attachment: fixed;
+}
+
+/* Logo adaptable */
+.logo-img {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Caja de login */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-img {
+    max-height: 60px;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+  .login-card {
+    margin: 0 15px; /* espacio en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 0.9rem;
+  }
+  .logo-img {
+    max-height: 50px;
+  }
+}
+

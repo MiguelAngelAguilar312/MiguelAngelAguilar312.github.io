@@ -1,0 +1,117 @@
+/* === ESTILOS GENERALES === */
+body {
+  background-color: #f8f9fa;
+  padding-top: 120px; /* espacio para header + navbar móvil */
+  padding-bottom: 60px;
+  display: flex;
+}
+
+/* === SIDEBAR (SOLO ESCRITORIO) === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  height: 100vh;
+  background-color: #212529;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1030;
+}
+.sidebar a {
+  color: #adb5bd;
+}
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #0d6efd;
+  color: #fff !important;
+}
+
+/*AGREGADO PARA CORREGIR EL SLIDE BAR EL FONDO BALNCO A OSCURO*/
+.dropdown-menu-dark {
+  background-color: #212529 !important;
+  color: #f8f9fa !important;
+}
+
+.dropdown-menu-dark .dropdown-item {
+  color: #f8f9fa;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+  background-color: #343a40;
+  color: #fff;
+}
+
+/* === HEADER === */
+header {
+  position: fixed;
+  top: 0;
+  left: 70px; /* corre por sidebar en escritorio */
+  right: 0;
+  height: 70px;
+  z-index: 1020;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Tamaño título por defecto en escritorio */
+.responsive-title {
+  font-size: 1.5rem; /* ≈ H4 */
+}
+
+/* Tamaño título en móviles */
+@media (max-width: 992px) {
+  .responsive-title {
+    font-size: 1rem; /* ≈ H6 */
+  }
+}
+
+/* === NAVBAR MÓVIL === */
+.navbar-mobile {
+  display: none;
+}
+
+/* === CONTENIDO === */
+.content {
+  margin-left: 70px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* === FOOTER === */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* === RESPONSIVE (MÓVIL) === */
+@media (max-width: 992px) {
+  .sidebar {
+    display: none !important; /* oculta sidebar en móviles */
+  }
+  header {
+    left: 0; /* header ocupa todo el ancho */
+  }
+  .navbar-mobile {
+    display: block;
+    position: fixed;
+    top: 56px; /* justo debajo del header */
+    left: 0;
+    right: 0;
+    z-index: 1035;
+  }
+  body {
+    padding-top: 112px; /* header (56px) + navbar (56px) */
+  }
+  .content {
+    margin-left: 0;
+  }
+}
