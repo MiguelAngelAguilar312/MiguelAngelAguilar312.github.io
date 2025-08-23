@@ -1,6 +1,6 @@
 Desarollo para la Sociedad Mexicana de Anestesia Pediatrica dejo a continuacion del Link:
 
-https://miguelangelaguilar312.github.io/DiplomadoSMAP.github.io/
+https://miguelangelaguilar312.github.io/
 
 Credenciales de Acceso para Usuario y Alumno:
 
